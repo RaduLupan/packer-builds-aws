@@ -16,7 +16,7 @@ locals {
 # build blocks. A build block runs provisioner and post-processors on a
 # source.
 source "amazon-ebs" "firstrun-windows" {
-  ami_name      = "q4-surveillance-win2019-${local.timestamp}"
+  ami_name      = "win2019-office365-3rdparty-${local.timestamp}"
   communicator  = "winrm"
   instance_type = "t3.micro"
   region        = "${var.region}"
@@ -41,5 +41,10 @@ build {
   provisioner "powershell" {
     environment_vars = ["download_url=${var.download_url}"]
     script           = "./setup-office-deployment-tool.ps1"
+  }
+  
+  # Download Office 365 apps using the Office Deployment Tool.
+  provisioner "windows-shell" {
+    inline = ["C:\\ODT\\Office365-Download.cmd"]
   }
 }
