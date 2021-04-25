@@ -45,6 +45,6 @@ build {
   
   # Download Office 365 apps using the Office Deployment Tool.
   provisioner "windows-shell" {
-    inline = ["C:\\ODT\\Office365-Download.cmd"]
+    script = ".\\scripts\\office365-download.cmd"
   }
 }
