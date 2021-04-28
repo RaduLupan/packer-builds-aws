@@ -3,9 +3,10 @@ variable "region" {
   default = "us-west-2"
 }
 
-variable "download_url" {
-    type    = string
-    default = "https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_13530-20376.exe"
+variable "odt_download_url" {
+    description = "The download URL for the Office Deployment Tool that is used to download and install the Office 365 apps."
+    type        = string
+    default     = "https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_13530-20376.exe"
 }
 
 locals { 

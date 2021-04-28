@@ -1,4 +1,4 @@
-$url=$env:download_url
+$url=$env:odt_download_url
 
 $configurationXML=@"
 <Configuration>
