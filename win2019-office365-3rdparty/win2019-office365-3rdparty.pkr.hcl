@@ -47,4 +47,9 @@ build {
   provisioner "windows-shell" {
     script = ".\\scripts\\office365-download.cmd"
   }
+
+  # Install Office 365 apps using the Office Deployment Tool.
+  provisioner "windows-shell" {
+    script = ".\\scripts\\office365-install.cmd"
+  }
 }
